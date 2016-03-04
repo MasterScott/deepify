@@ -61,9 +61,9 @@ Type -h or --help to get more information about which are the parameters of the 
 
 You can also use the functions as a library:
 ```
-import torfy.torwrapper as torwrapper
+import torfy.tor as torwrapper
 url = "http://3g2upl4pq6kufc4m.onion/"
-data = torwrapper.grabOnionUrl(url)
+data = torwrapper.getResponse(url)
 print data
 ```
 

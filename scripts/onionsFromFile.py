@@ -31,17 +31,16 @@ __author__ = "Felix Brezo, Yaiza Rubio "
 __copyright__ = "Copyright 2016, i3visio"
 __credits__ = ["Felix Brezo", "Yaiza Rubio"]
 __license__ = "GPLv3+"
-__version__ = "v0.1.0"
+__version__ = "v0.2.0"
 __maintainer__ = "Felix Brezo, Yaiza Rubio"
 __email__ = "contacto@i3visio.com"
 
 import argparse
 import os
 import json
-import torfy.banner as banner
-import torfy.torwrapper as torwrapper
+import torfy.utils.banner as banner
+from torfy.tor import Tor
 import datetime as dt
-
 
 def main(args):
     """
@@ -60,7 +59,8 @@ def main(args):
     for url in urls:        
         print dt.datetime.now(), ":\t", url
         # Leemos contenido
-        response = tor.grabOnionUrl(url)
+        torWrapper = Tor()
+        response = torWrapper.getResponse(url)
 
         # Storing the full processed response
         with open(os.path.join(args.output_folder, response["domain"] +".json"), "w") as oF:

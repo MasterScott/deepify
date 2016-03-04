@@ -31,18 +31,19 @@ __author__ = "Felix Brezo, Yaiza Rubio "
 __copyright__ = "Copyright 2016, i3visio"
 __credits__ = ["Felix Brezo", "Yaiza Rubio"]
 __license__ = "GPLv3+"
-__version__ = "v0.1.0"
+__version__ = "v0.2.0"
 __maintainer__ = "Felix Brezo, Yaiza Rubio"
 __email__ = "contacto@i3visio.com"
 
 import argparse
 import json
-import torfy.banner as banner
-import torfy.torwrapper as torwrapper
+import torfy.utils.banner as banner
+from torfy.tor import Tor
 
 def main(args):
     for url in args.url:
-        data = torwrapper.grabOnionUrl(url)
+        torWrapper = Tor()
+        data = torWrapper.getResponse(url)
         print json.dumps(data, indent=2)
 
 def getParser():

@@ -95,14 +95,9 @@ def getConfiguration(configPath = None):
                     oF.write(cont)    
                                                 
         except Exception, e:
-            print "WARNING. No configuration file could be found and the default file was not found either, so configuration will be set as default."
-            print str(e)
-            print
-            # Storing configuration as default
-            info = {}
-            info["host"] = "127.0.0.1"
-            info["port"] = "9150"
-            return info
+            errMsg = "ERROR. No configuration file could be found and the default file was not found either. You might need to reset it manually."
+            raise Exception( errMsg + " " + str(e))      
+
     try:
         # Reading the configuration file
         config = ConfigParser.ConfigParser()
@@ -111,20 +106,18 @@ def getConfiguration(configPath = None):
         info = {}
 
         # Iterating through all the sections, which contain the platforms
-        for conf in config.sections():
+        for section in config.sections():
+            current = {}
             # Iterating through parametgers
-            for (param, value) in config.items(conf):
-                info[param] = value
+            for (param, value) in config.items(section):
+                current[param] = value
                 
+            # Loading the configuration in the info dictionary
+            info[section] = current
+            
     except Exception, e:
-        print "WARNING. Something happened when processing the Configuration file (some kind of malform?), so configuration will be set as default."
-        print str(e)
-        print
-        # Storing configuration as default
-        info = {}
-        info["host"] = "127.0.0.1"
-        info["port"] = "9150"
-        return info            
+        errMsg = "ERROR. Something happened when processing the Configuration file (some kind of malform?). Check it before running it again."
+        raise Exception( errMsg + " " + str(e))      
 
     return info
 

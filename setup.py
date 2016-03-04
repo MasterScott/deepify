@@ -29,7 +29,7 @@ HERE = os.path.abspath(os.path.dirname(__file__))
 import torfy
 NEW_VERSION = torfy.__version__
 
-import torfy.configuration as configuration
+import torfy.utils.configuration as configuration
 
 # Depending on the place in which the project is going to be upgraded
 from setuptools import setup
