@@ -3,6 +3,10 @@ Torfy Changelog
 
 For more information, check the README.md in <http://github.com/i3visio/torfy>.
 
+0.2.1, 2016/03/04 -- Added threading to onionsFromFile.py.
+- Adding threading options to the file to fasten the process of getting tor connections.
+- The HTML code is now stored in onionsFromFile and exceptions are managed better.
+
 0.2.0, 2016/03/04 -- Abstraction of the classes.
 - Abstracting the conception of the wrappers to make it easy further improvements. Class inheritance has been included.
 - Refactorization of the torfy folder.
