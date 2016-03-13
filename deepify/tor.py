@@ -5,7 +5,7 @@
 #
 #    Copyright 2016 Félix Brezo and Yaiza Rubio (i3visio, contacto@i3visio.com)
 #
-#    This file is part of Torfy. You can redistribute it and/or modify
+#    This file is part of Deepify. You can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
 #    the Free Software Foundation, either version 3 of the License, or
 #    (at your option) any later version.
@@ -23,7 +23,7 @@
 import datetime as dt
 import socket
 import socks
-from torfy.utils.wrapper import Wrapper
+from deepify.utils.wrapper import Wrapper
 
 class Tor(Wrapper):
     """
@@ -31,7 +31,7 @@ class Tor(Wrapper):
         
         Inherited functions:
             -     def _getConfiguration(self):
-            -     def _getDomainFromUrl(self, url):
+            -     def getDomainFromUrl(self, url):
             -     def _rebuildHTMLContent(self, linesArray):
             -     def getResponse(self, url):            
 

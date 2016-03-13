@@ -5,7 +5,7 @@
 #
 #    Copyright 2016 Félix Brezo and Yaiza Rubio (i3visio, contacto@i3visio.com)
 #
-#    This file is part of Torfy. You can redistribute it and/or modify
+#    This file is part of Deepify. You can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
 #    the Free Software Foundation, either version 3 of the License, or
 #    (at your option) any later version.
@@ -20,7 +20,7 @@
 #
 ##################################################################################
 
-import torfy.utils.configuration as configuration
+import deepify.utils.configuration as configuration
 import datetime as dt
 import json
 import re
@@ -59,7 +59,7 @@ class Wrapper():
             errMsg = "ERROR. WTF! There was not found any configuration for " + self.name + " in the configuration file!"
             raise Exception( errMsg )
             
-    def _getDomainFromUrl(self, url):
+    def getDomainFromUrl(self, url):
         """
             Extracting the domain from the URL.
             
@@ -160,7 +160,7 @@ class Wrapper():
             
         # Adding other known data            
         response["time_processed"] = str(dt.datetime.now())
-        response["domain"] = self._getDomainFromUrl(url)
+        response["domain"] = self.getDomainFromUrl(url)
         response["url"] = url          
 
         try:

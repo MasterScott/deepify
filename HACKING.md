@@ -1,23 +1,23 @@
-Contributing to Torfy
-=====================
+Contributing to Deepify
+=======================
 
 Reporting issues, bugs and fresh ideas
 --------------------------------------
 
-The way in which we track the issues regarding the software is by means of the issues page in Github's project site, which can be found here: <https://github.com/i3visio/torfy/issues>.
+The way in which we track the issues regarding the software is by means of the issues page in Github's project site, which can be found here: <https://github.com/i3visio/deepify/issues>.
 Whether you have experimented problems with the installation, you have found a bug in a new platform or you feel that we can add a new functionality, you can find the place to report them there. The only "rule" is to notify one error per issue to be able to track the problems indepently, as well as trying to provide as much information as possible regarding the OS or version you are trying.
 
 Contributing code
 -----------------
 
-Whether you want to add a new wrapper or fix a bug, the basic instructions to contribute and perform a pull request on Github are the following (we assume that you have installed Git by yourself, so please follow the instructions in the project's website to install it on your system <https://git-scm.com/downloads>). We will assume that the username for this test is `torfy_contributor`.
+Whether you want to add a new wrapper or fix a bug, the basic instructions to contribute and perform a pull request on Github are the following (we assume that you have installed Git by yourself, so please follow the instructions in the project's website to install it on your system <https://git-scm.com/downloads>). We will assume that the username for this test is `deepify_contributor`.
 
-First of all, logged in Github and fork the repository by pressing the corresponding button in <https://github.com/i3visio/torfy>. This will create a copy of the repository under your profile (i. e.: `https://github.com/torfy_contributor/torfy`).
+First of all, logged in Github and fork the repository by pressing the corresponding button in <https://github.com/i3visio/deepify>. This will create a copy of the repository under your profile (i. e.: `https://github.com/deepify_contributor/deepify`).
 
 You can clone your forked repository now:
 ```
-# This is an example! Change "torfy_contributor" for your nick!
-git clone https://github.com/torfy_contributor/torfy
+# This is an example! Change "deepify_contributor" for your nick!
+git clone https://github.com/deepify_contributor/deepify
 cd osrframework
 ```
 
@@ -50,7 +50,7 @@ You have to push the changes to your Github project.
 git push origin
 ```
 
-You're almost there. You can now go to your project's website (`http://github.com/torfy_contributor/torfy`) and click in the `Pulls` tab or going directly to it by appending `pulls` to your forked URL, something similar to `https://github.com/torfy_contributor/torfy/pulls`. Then provide there as much detail as you can about the contents of the pull request and shortly we will evaluate the changes and pushed it upstream.
+You're almost there. You can now go to your project's website (`http://github.com/deepify_contributor/deepify`) and click in the `Pulls` tab or going directly to it by appending `pulls` to your forked URL, something similar to `https://github.com/deepify_contributor/deepify/pulls`. Then provide there as much detail as you can about the contents of the pull request and shortly we will evaluate the changes and pushed it upstream.
 
 Style guide
 -----------

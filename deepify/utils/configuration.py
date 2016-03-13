@@ -5,7 +5,7 @@
 #
 #    Copyright 2016 Félix Brezo and Yaiza Rubio (i3visio, contacto@i3visio.com)
 #
-#    This file is part of Torfy. You can redistribute it and/or modify
+#    This file is part of Deepify. You can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
 #    the Free Software Foundation, either version 3 of the License, or
 #    (at your option) any later version.
@@ -63,19 +63,19 @@ def getConfigPath(configFileName = None):
     if configFileName != None:
         # Returning the path of the configuration file
         if sys.platform == 'win32':
-            return os.path.expanduser(os.path.join('~\\', 'Torfy', configFileName))
+            return os.path.expanduser(os.path.join('~\\', 'Deepify', configFileName))
         else:
-            return os.path.expanduser(os.path.join('~/', '.config', 'Torfy', configFileName))
+            return os.path.expanduser(os.path.join('~/', '.config', 'Deepify', configFileName))
     else:
         # Returning the path of the configuration folder
         if sys.platform == 'win32':
-            return os.path.expanduser(os.path.join('~\\', 'Torfy'))
+            return os.path.expanduser(os.path.join('~\\', 'Deepify'))
         else:
-            return os.path.expanduser(os.path.join('~/', '.config', 'Torfy'))
+            return os.path.expanduser(os.path.join('~/', '.config', 'Deepify'))
 
 def getConfiguration(configPath = None):
     """
-        Reading the configuration file to look for where the Tor Browser is running.
+        Reading the configuration file to look for where the different gates are running.
         
         :return: A json containing the information stored in the .cfg file.
     """

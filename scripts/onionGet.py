@@ -5,7 +5,7 @@
 #
 #    Copyright 2016 Félix Brezo and Yaiza Rubio (i3visio, contacto@i3visio.com)
 #
-#    This file is part of Torfy. You can redistribute it and/or modify
+#    This file is part of Deepify. You can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
 #    the Free Software Foundation, either version 3 of the License, or
 #    (at your option) any later version.
@@ -37,8 +37,8 @@ __email__ = "contacto@i3visio.com"
 
 import argparse
 import json
-import torfy.utils.banner as banner
-from torfy.tor import Tor
+import deepify.utils.banner as banner
+from deepify.tor import Tor
 
 def main(args):
     for url in args.url:
@@ -57,7 +57,7 @@ def getParser():
     groupMainOptions.add_argument('-u', '--url', metavar='<url>', nargs='+', action='store', help = 'URL to collect (at least one is required).')
 
     # Configuring the processing options
-    groupProcessing = parser.add_argument_group('Processing arguments', 'Configuring the way in which torfy will process the URL.')
+    groupProcessing = parser.add_argument_group('Processing arguments', 'Configuring the way in which deepify will process the URL.')
     groupProcessing.add_argument('-o', '--output_folder', metavar='<path_to_output_folder>', required=False, default = './results', action='store', help='output folder for the generated documents. While if the paths does not exist, usufy.py will try to create; if this argument is not provided, usufy will NOT write any down any data. Check permissions if something goes wrong.')
 
     # About options

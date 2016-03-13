@@ -38,16 +38,16 @@ sudo python get-pip.py
 Try again and check if the new pip version is installed.
 
 
-2 - Installing Torfy from pip
------------------------------
+2 - Installing Deepify from pip
+-------------------------------
 
 Fast way to do it on any system:
 ```
-pip install torfy
+pip install deepify
 ```
 Under MacOS or Linux systems, you may need to do this as superuser:
 ```
-sudo pip install torfy
+sudo pip install deepify
 ```
 This will manage all the dependencies for you.
 
@@ -62,17 +62,17 @@ onionGet.py -u "http://3g2upl4pq6kufc4m.onion/"
 4 - Updating the tool
 ---------------------
 
-Torfy is a tool in development mantained by its [authors](AUTHORS.md) and, thus, we will commit new issues and functionalities from time to time. To upgrade your local Torfy installation you can type the following:
+Deepify is a tool in development mantained by its [authors](AUTHORS.md) and, thus, we will commit new issues and functionalities from time to time. To upgrade your local Deepify installation you can type the following:
 ```
-pip install torfy --upgrade
+pip install deepify --upgrade
 ```
 Under MacOS or Linux systems, you may need to do this as superuser:
 ```
-sudo pip install torfy --upgrade
+sudo pip install deepify --upgrade
 ```
 This will manage all the dependencies for you and will try to download the latest "stable" version. If you want to try a prerelease version, you can type:
 ```
-sudo pip install torfy --upgrade --pre
+sudo pip install deepify --upgrade --pre
 ```
 But please, do it under your responsibility. Strange things may take place!
 

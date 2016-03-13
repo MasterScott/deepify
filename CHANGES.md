@@ -1,9 +1,16 @@
-Torfy Changelog
-===============
+Deepify Changelog
+=================
 
-For more information, check the README.md in <http://github.com/i3visio/torfy>.
+For more information, check the README.md in <http://github.com/i3visio/deepify>.
 
-0.2.1, 2016/03/04 -- Added threading to onionsFromFile.py.
+0.3.0, 2016/03/14 -- Changed the name of the library and other minor fixes.
+- All references to torfy has been changed to deepify, as this is a more general approach.
+- Change in the getDomainFromUrl which now is a public function. 
+
+0.2.2, 2016/03/07 -- Fixed an issue when launching onionsFromFile.py.
+- There was an issue when launching the onionsFromFile.py as some variables where impossible to be caught.
+
+0.2.1, 2016/03/06 -- Added threading to onionsFromFile.py.
 - Adding threading options to the file to fasten the process of getting tor connections.
 - The HTML code is now stored in onionsFromFile and exceptions are managed better.
 

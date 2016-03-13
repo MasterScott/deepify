@@ -5,7 +5,7 @@
 #
 #    Copyright 2016 Félix Brezo and Yaiza Rubio (i3visio, contacto@i3visio.com)
 #
-#    This file is part of Torfy. You can redistribute it and/or modify
+#    This file is part of Deepify. You can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
 #    the Free Software Foundation, either version 3 of the License, or
 #    (at your option) any later version.
@@ -26,10 +26,10 @@ import sys
 HERE = os.path.abspath(os.path.dirname(__file__))
 
 # Importing the local scrips for the setup and taking the new version number
-import torfy
-NEW_VERSION = torfy.__version__
+import deepify
+NEW_VERSION = deepify.__version__
 
-import torfy.utils.configuration as configuration
+import deepify.utils.configuration as configuration
 
 # Depending on the place in which the project is going to be upgraded
 from setuptools import setup
@@ -59,12 +59,12 @@ if not os.path.exists(applicationPathDefaults):
     os.makedirs(applicationPathDefaults) 
 	
 # Launching the setup
-setup(    name="torfy",
+setup(    name="deepify",
     version=NEW_VERSION,
-    description="Torfy - A set of GPLv3+ libraries to deal with Tor connections.",
+    description="Deepify - A set of GPLv3+ libraries to deal with Tor connections.",
     author="Felix Brezo and Yaiza Rubio",
     author_email="contacto@i3visio.com",
-    url="http://github.com/i3visio/torfy",
+    url="http://github.com/i3visio/deepify",
     license="COPYING",
     keywords = "python osint harvesting networking tor privacy",
     scripts= [
@@ -87,7 +87,7 @@ setup(    name="torfy",
         'Topic :: Text Processing :: Markup :: HTML'                                 
     ],    
     packages=[
-        "torfy", 
+        "deepify", 
     ],
     long_description=long_description,
     install_requires=[

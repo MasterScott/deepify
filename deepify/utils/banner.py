@@ -4,7 +4,7 @@
 #
 #    Copyright 2016 Félix Brezo and Yaiza Rubio (i3visio, contacto@i3visio.com)
 #
-#    This file is part of OSRFramework. You can redistribute it and/or modify
+#    This file is part of Deepify. You can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
 #    the Free Software Foundation, either version 3 of the License, or
 #    (at your option) any later version.
@@ -19,17 +19,17 @@
 #
 ##################################################################################
 
-import torfy
+import deepify
 
 WELCOME_TEXT = """
- _____           __       
-|_   _|__  _ __ / _|_   _           What's this?  
-  | |/ _ \| '__| |_| | | |          ------------
-  | | (_) | |  |  _| |_| |          
-  |_|\___/|_|  |_|  \__, |          This script is part of Torfy, a GPLv3+
-                    |___/           library to deal with Tor connections.
+ ____                  _  __       
+|  _ \  ___  ___ _ __ (_)/ _|_   _      What's this? 
+| | | |/ _ \/ _ \ '_ \| | |_| | | |     ------------
+| |_| |  __/  __/ |_) | |  _| |_| |
+|____/ \___|\___| .__/|_|_|  \__, |     This script is part of Deepify, a GPLv3+
+                |_|          |___/      library to deal with deep web links.
 
-                Version:      Torfy """ + torfy.__version__ + """
+                Version:      Deepify """ + deepify.__version__ + """
                 Created by:   Felix Brezo and Yaiza Rubio, (i3visio)
 
 """

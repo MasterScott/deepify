@@ -1,17 +1,16 @@
-Torfy
-=====
+Deepify
+=======
 
 Copyright (C) 2016  F. Brezo and Y. Rubio, i3visio
 
-[![Version in PyPI](https://img.shields.io/pypi/v/torfy.svg)]()
-[![Downloads/Month in PyPI](https://img.shields.io/pypi/dm/torfy.svg)]()
+[![Version in PyPI](https://img.shields.io/pypi/v/deepify.svg)]()
+[![Downloads/Month in PyPI](https://img.shields.io/pypi/dm/deepify.svg)]()
 [![License](https://img.shields.io/badge/license-GNU%20General%20Public%20License%20Version%203%20or%20Later-blue.svg)]()
 
 1 - Description
 ---------------
 
-OSRFramework is a GPLv3+ set of libraries developed by i3visio to perform Open Source Intelligence tasks. They include references to a bunch of different applications related to username checking, information leaks research, deep web search, regular expressions extraction and many others. At the same time, by means of ad-hoc Maltego transforms, OSRFramework provides a way of making these queries graphically.
-
+Deepify is a GPLv3+ set of libraries developed by i3visio to perform Open Source Intelligence tasks in some part of the internet that are not as easy to access as the conventional part of the web.
 
 2 - License: GPLv3+
 -------------------
@@ -39,11 +38,11 @@ For more details on this issue, check the [COPYING](COPYING) file.
 
 Fast way to do it on any system:
 ```
-pip install torfy
+pip install deepify
 ```
 Under MacOS or Linux systems, you may need to do this as superuser:
 ```
-sudo pip install torfy
+sudo pip install deepify
 ```
 This will manage all the dependencies for you.
 
@@ -52,25 +51,28 @@ If you needed further information, check the [INSTALL.md](INSTALL.md) file.
 4 - Basic usage
 ---------------
 
-If everything went correctly (we hope so!), it's time for trying torfy.py. But first, you will need to start the Tor Bundle downloadable from `http://torproject.org`. Execution examples:
+If everything went correctly (we hope so!), it's time for trying deepify. But first, you will need to start the Tor Bundle downloadable from `http://torproject.org`. Execution examples:
 ```
 onionGet.py -u "http://3g2upl4pq6kufc4m.onion/"
 ```
 
 Type -h or --help to get more information about which are the parameters of the application.
 
-You can also use the functions as a library:
+You can use the functions as a library for collecting information from Tor:
 ```
-import torfy.tor as torwrapper
+# Check that you have the Tor Browser installed first
+import deepify.tor as torwrapper
 url = "http://3g2upl4pq6kufc4m.onion/"
 data = torwrapper.getResponse(url)
 print data
 ```
 
+
+
 5 - HACKING
 -----------
 
-If you want to extend the functionalities of Torfy and you do not know where to start from, check the [HACKING.md](HACKING.md) file.
+If you want to extend the functionalities of Deepify and you do not know where to start from, check the [HACKING.md](HACKING.md) file.
 
 6 - AUTHORS
 -----------
