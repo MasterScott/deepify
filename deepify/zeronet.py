@@ -25,9 +25,9 @@ import socket
 import socks
 from deepify.utils.wrapper import Wrapper
 
-class Tor(Wrapper):
+class Zeronet(Wrapper):
     """
-        A <Wrapper> class that defines the the special processing that Tor needs.
+        A <Wrapper> class that defines the the special processing that Zeronet needs.
         
         Inherited functions:
             -     def _getConfiguration(self):
@@ -45,8 +45,8 @@ class Tor(Wrapper):
             Constructor without parameters...
         """
         # As would be defined in the browser.cfg
-        self.name = "Tor"
-        self.domainRegexp = "https?://([a-zA-Z0-9]+\.onion)/.*"
+        self.name = "Zeronet"
+        self.domainRegexp = "https?://zero/([^\/]+)"
         # Letting it as default
         self.info = {}
         
@@ -87,7 +87,7 @@ class Tor(Wrapper):
             
         # Try to make the errors clear for other users
         except socks.ProxyConnectionError, sPCE:
-            errMsg = "ERROR socks.ProxyConnectionError. Something seems to be wrong with the Tor Bundler."   
+            errMsg = "ERROR socks.ProxyConnectionError. Something seems to be wrong with the Zeronet Bundler."   
             raise Exception( errMsg + " " + str(sPCE))        
             
         return response   

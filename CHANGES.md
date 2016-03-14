@@ -3,7 +3,8 @@ Deepify Changelog
 
 For more information, check the README.md in <http://github.com/i3visio/deepify>.
 
-0.3.0, 2016/03/14 -- Changed the name of the library and other minor fixes.
+0.3.0b, 2016/03/14 -- Changed the name of the library and other minor fixes. Added a Zeronet wrapper.
+- Added Zeronet wrapper as well as a script zeronetGet.py for testing.
 - All references to torfy has been changed to deepify, as this is a more general approach.
 - Change in the getDomainFromUrl which now is a public function. 
 

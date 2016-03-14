@@ -69,6 +69,7 @@ setup(    name="deepify",
     keywords = "python osint harvesting networking tor privacy",
     scripts= [
         "scripts/onionGet.py",            
+        "scripts/zeronetGet.py",            
         "scripts/onionsFromFile.py",            
     ],
     classifiers=[
