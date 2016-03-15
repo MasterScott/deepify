@@ -21,17 +21,17 @@
 ##################################################################################
 
 '''
-onionsFromFile.py Copyright (C) F. Brezo and Y. Rubio (i3visio) 2016
+zeronetsFromFile.py Copyright (C) F. Brezo and Y. Rubio (i3visio) 2016
 This program comes with ABSOLUTELY NO WARRANTY.
 This is free software, and you are welcome to redistribute it under certain conditions.
 For details, run:
-    python onionsFromFile.py --license
+    python zeronetsFromFile.py --license
 '''
 __author__ = "Felix Brezo, Yaiza Rubio "
 __copyright__ = "Copyright 2016, i3visio"
 __credits__ = ["Felix Brezo", "Yaiza Rubio"]
 __license__ = "GPLv3+"
-__version__ = "v0.3.0"
+__version__ = "v0.1.0"
 __maintainer__ = "Felix Brezo, Yaiza Rubio"
 __email__ = "contacto@i3visio.com"
 
@@ -39,7 +39,7 @@ import argparse
 import os
 import json
 import deepify.utils.banner as banner
-from deepify.tor import Tor
+from deepify.zeronet import Zeronet
 import datetime as dt
 from multiprocessing import Pool
 
@@ -49,22 +49,22 @@ def multi_run_wrapper(params):
         Wrapper for being able to launch all the threads.
         :param params: We receive the parameters as a tuple.
     '''
-    onion, index, total, output_folder, overwrite = params
+    zeronet, index, total, output_folder, overwrite = params
     print "[" + str(index) + "/" + str(total) + "] ", dt.datetime.now(), ":\tRecovering information from ", onion
     try: 
         # Reading content
-        torWrapper = Tor()
+        zeronetWrapper = Zeronet()
         
-        domain = torWrapper.getDomainFromUrl(onion)
+        domain = zeronetWrapper.getDomainFromUrl(zeronet)
         
         # Only doing something if the Json files does NOT exist 
         if overwrite or not os.path.exists (os.path.join( output_folder, domain +".json")):                
-            response = torWrapper.getResponse(onion)
+            response = zeronetWrapper.getResponse(zeronet)
 
             if response["status"]["code"] != 200:
-                print dt.datetime.now(), ":\tSomething happened when launching the query for <" + onion +">.\nError message: " + response["status"]["desc"]
+                print dt.datetime.now(), ":\tSomething happened when launching the query for <" + zeronet +">.\nError message: " + response["status"]["desc"]
 
-            print "[" + str(index) + "/" + str(total) + "] ", dt.datetime.now(), ":\tStoring information from", onion
+            print "[" + str(index) + "/" + str(total) + "] ", dt.datetime.now(), ":\tStoring information from", zeronet
             # Storing the full processed response
             with open(os.path.join( output_folder, response["domain"] +".json"), "w") as oF:
                 try:
@@ -74,9 +74,9 @@ def multi_run_wrapper(params):
                     oF.write(response)                
 
     except:
-        print "ERROR. SOMETHING HAPPENED WITH THE FOLLOWING DOMAIN: " + onion
+        print "ERROR. SOMETHING HAPPENED WITH THE FOLLOWING DOMAIN: " + zeronet
         with open("./errors.log", "a") as errorFile:
-            errorFile.write(onion+"\n")
+            errorFile.write(zeronet+"\n")
             
 def main(args):
     """
@@ -93,14 +93,14 @@ def main(args):
         os.makedirs(args.output_folder)
 
     # Using threads in a pool if we are not running the program in main
-    onions = []
+    zeronets = []
 
     for i, url in enumerate(urls):
-        onions.append((url, i+1, len(urls), args.output_folder, args.overwrite))     
+        zeronets.append((url, i+1, len(urls), args.output_folder, args.overwrite))     
 
     # If the process is executed by the current app, we use the Processes. It is faster than pools.
-    if args.threads <= 0 or args.threads > len(onions):
-        nThreads = len(onions)
+    if args.threads <= 0 or args.threads > len(zeronets):
+        nThreads = len(zeronets)
     else:
         nThreads = args.threads
         
@@ -111,13 +111,13 @@ def main(args):
     pool = Pool(nThreads)
 
     # We call the wrapping function with all the args previously generated
-    poolResults = pool.map(multi_run_wrapper,onions)
+    poolResults = pool.map(multi_run_wrapper,zeronets)
 
     pool.close()                     
 
 
 def getParser():
-    parser = argparse.ArgumentParser(description='onionsFromFile.py - Grabbing Tor URLs from a file.', prog='onionsFromFile.py', epilog='Check the README.md file for further details on the usage of this program or follow us on Twitter in <http://twitter.com/i3visio>.', add_help=False)
+    parser = argparse.ArgumentParser(description='zeronetsFromFile.py - Grabbing Zeronet URLs from a file.', prog='zeronetsFromFile.py', epilog='Check the README.md file for further details on the usage of this program or follow us on Twitter in <http://twitter.com/i3visio>.', add_help=False)
     parser._optionals.title = "Input options (one required)"
 
     # Defining the mutually exclusive group for the main options

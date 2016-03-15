@@ -67,7 +67,7 @@ class Tor(Wrapper):
             s = socks.socksocket()
             
             # Extracting the domain from the URL
-            domain = self._getDomainFromUrl(url)        
+            domain = self.getDomainFromUrl(url)        
             s.connect((domain, 80))
 
             message = 'GET ' + url + ' HTTP/1.0\r\n\r\n'

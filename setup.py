@@ -59,14 +59,15 @@ if not os.path.exists(applicationPathDefaults):
     os.makedirs(applicationPathDefaults) 
 	
 # Launching the setup
-setup(    name="deepify",
+setup(    
+    name="deepify",
     version=NEW_VERSION,
-    description="Deepify - A set of GPLv3+ libraries to deal with Tor connections.",
+    description="Deepify - A set of GPLv3+ libraries to deal with Deepweb connections.",
     author="Felix Brezo and Yaiza Rubio",
     author_email="contacto@i3visio.com",
     url="http://github.com/i3visio/deepify",
     license="COPYING",
-    keywords = "python osint harvesting networking tor privacy",
+    keywords = "python osint harvesting networking tor zeronet privacy",
     scripts= [
         "scripts/onionGet.py",            
         "scripts/zeronetGet.py",            

@@ -141,7 +141,7 @@ class Wrapper():
         """ 
             Public method that wraps the extraction of the content.
             
-            :param url: The URL to be processed.
+            :param url: The resource to be processed.
             :return:    The response in a Json format.
         """     
         # Defining an empty object for the response
@@ -160,6 +160,7 @@ class Wrapper():
             
         # Adding other known data            
         response["time_processed"] = str(dt.datetime.now())
+        
         response["domain"] = self.getDomainFromUrl(url)
         response["url"] = url          
 

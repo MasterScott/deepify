@@ -21,8 +21,7 @@
 ##################################################################################
 
 import datetime as dt
-import socket
-import socks
+import urllib2
 from deepify.utils.wrapper import Wrapper
 
 class Zeronet(Wrapper):
@@ -46,7 +45,7 @@ class Zeronet(Wrapper):
         """
         # As would be defined in the browser.cfg
         self.name = "Zeronet"
-        self.domainRegexp = "https?://zero/([^\/]+)"
+        self.domainRegexp = "(.+)"
         # Letting it as default
         self.info = {}
         
@@ -58,36 +57,29 @@ class Zeronet(Wrapper):
             :return:    The response in a Json format.
         """
         # Defining an empty object for the response
-        response = {}
+        info = {}
                 
         # This part has to be modified...        
         try:            
             # Configuring the socket
-            socks.setdefaultproxy(socks.PROXY_TYPE_SOCKS5, self.info["host"], int(self.info["port"]), True)
-            s = socks.socksocket()
-            
-            # Extracting the domain from the URL
-            domain = self._getDomainFromUrl(url)        
-            s.connect((domain, 80))
-
-            message = 'GET ' + url + ' HTTP/1.0\r\n\r\n'
-            s.sendall(message)
-            
-            data = ""
-            while True:
-                reply = s.recv(4096)
-
-                if not reply:
-                    break    
-                else:
-                    data += reply    
-            
+            queryURL = "http://" + self.info["host"] + ":" + self.info["port"] + "/" + url
+            print queryURL
+            response = urllib2.urlopen(queryURL)
+            print "here"
+            print response
+            print "here"
+            data = str(response.headers) + "\n"
+            print data
+            data += response.read()
+            print data
+            raw_input("Sth?")
             # Processing data as expected
-            response = self._createDataStructure(data)     
+            info = self._createDataStructure(data)     
             
         # Try to make the errors clear for other users
-        except socks.ProxyConnectionError, sPCE:
-            errMsg = "ERROR socks.ProxyConnectionError. Something seems to be wrong with the Zeronet Bundler."   
-            raise Exception( errMsg + " " + str(sPCE))        
+        except Exception, e:
+            errMsg = "ERROR Exception. Something seems to be wrong with the Zeronet Bundler."   
+            raise Exception( errMsg + " " + str(e))        
             
-        return response   
+        return info   
+        
