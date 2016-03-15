@@ -53,21 +53,30 @@ If you needed further information, check the [INSTALL.md](INSTALL.md) file.
 
 If everything went correctly (we hope so!), it's time for trying deepify. But first, you will need to start the Tor Bundle downloadable from `http://torproject.org`. Execution examples:
 ```
+# Check that you have the Tor Browser running and that the options in ~/.config/Deepify folder are correct
 onionGet.py -u "http://3g2upl4pq6kufc4m.onion/"
+# Check that you have the Zeronet running and that the options in ~/.config/Deepify folder are correct
+zeronetGet.py -u "1HeLLo4uzjaLetFx6NH3PMwFP3qbRbTf3D"
 ```
 
 Type -h or --help to get more information about which are the parameters of the application.
 
 You can use the functions as a library for collecting information from Tor:
 ```
-# Check that you have the Tor Browser installed first
-import deepify.tor as torwrapper
+# Check that you have the Tor Browser running and that the options in ~/.config/Deepify folder are correct
+import deepify.tor as tor
 url = "http://3g2upl4pq6kufc4m.onion/"
-data = torwrapper.getResponse(url)
+data = tor.getResponse(url)
 print data
 ```
-
-
+You can also check it in Zeronet:
+```
+# Check that you have the Tor Browser running and that the options in ~/.config/Deepify folder are correct
+import deepify.zeronet as zeronet
+url = "1HeLLo4uzjaLetFx6NH3PMwFP3qbRbTf3D"
+data = zeronet.getResponse(url)
+print data
+```
 
 5 - HACKING
 -----------

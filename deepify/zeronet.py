@@ -63,16 +63,13 @@ class Zeronet(Wrapper):
         try:            
             # Configuring the socket
             queryURL = "http://" + self.info["host"] + ":" + self.info["port"] + "/" + url
-            print queryURL
             response = urllib2.urlopen(queryURL)
-            print "here"
-            print response
-            print "here"
+
+            # Rebuilding data to be processed
             data = str(response.headers) + "\n"
-            print data
+
             data += response.read()
-            print data
-            raw_input("Sth?")
+
             # Processing data as expected
             info = self._createDataStructure(data)     
             
