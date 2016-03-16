@@ -71,7 +71,7 @@ print data
 ```
 You can also check it in Zeronet:
 ```
-# Check that you have the Tor Browser running and that the options in ~/.config/Deepify folder are correct
+# Check that you have the Zeronet service running and that the options in ~/.config/Deepify folder are correct
 import deepify.zeronet as zeronet
 url = "1HeLLo4uzjaLetFx6NH3PMwFP3qbRbTf3D"
 data = zeronet.getResponse(url)
