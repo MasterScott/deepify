@@ -64,17 +64,21 @@ Type -h or --help to get more information about which are the parameters of the 
 You can use the functions as a library for collecting information from Tor:
 ```
 # Check that you have the Tor Browser running and that the options in ~/.config/Deepify folder are correct
-import deepify.tor as tor
+from deepify.tor import Tor
 url = "http://3g2upl4pq6kufc4m.onion/"
-data = tor.getResponse(url)
+# Creating the wrapper instance
+torwrapper = Tor()
+data = torwrapper.getResponse(url)
 print data
 ```
 You can also check it in Zeronet:
 ```
 # Check that you have the Zeronet service running and that the options in ~/.config/Deepify folder are correct
-import deepify.zeronet as zeronet
+from deepify.zeronet import Zeronet
 url = "1HeLLo4uzjaLetFx6NH3PMwFP3qbRbTf3D"
-data = zeronet.getResponse(url)
+# Creating the wrapper instance
+zeronetwrapper = Zeronet()
+data = zeronetwrapper.getResponse(url)
 print data
 ```
 
