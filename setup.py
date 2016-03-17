@@ -90,6 +90,7 @@ setup(
     ],    
     packages=[
         "deepify", 
+        "deepify.utils", 
     ],
     long_description=long_description,
     install_requires=[

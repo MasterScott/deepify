@@ -3,6 +3,9 @@ Deepify Changelog
 
 For more information, check the README.md in <http://github.com/i3visio/deepify>.
 
+0.3.2, 2016/03/16 -- The error in 0.3.1 was finally fixed.
+- Oops! The error in 0.3.1 was not fixed until now.
+
 0.3.1, 2016/03/16 -- Fixed an error in setup.py to import the deepify.utils library in the installation.
 - Added the package deepify.utils to the setup.py file.
 - Minor fixes in the README.md file.
